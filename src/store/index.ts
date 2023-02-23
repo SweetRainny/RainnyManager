@@ -1,8 +1,6 @@
 import type { InjectionKey } from 'vue';
 import { createStore, Store } from 'vuex'
 import getters from './getters'
-// import user from './modules/user'
-
 
 
 // 配置选项中的接口
@@ -10,7 +8,7 @@ interface State {
   age: number
 }
 
-// 这个key需要在组件中引入 store时使用, 没有会报错 --> useStore(key) 
+// 这个key需要在组件中引入 store 时使用, 没有会报错 --> useStore(key) 
 export const key: InjectionKey<Store<State>> = Symbol()
 
 
@@ -42,12 +40,7 @@ const store = createStore({
     return {
       test: "test text999"
     }
-  },
-  // mutations: {
-  //   increment (state) {
-  //     state.count++
-  //   }
-  // }
+  }
 })
 
 export default store;

@@ -9,10 +9,10 @@
       <div class="login-title">
         <h2>登录页面</h2>
       </div>
-      <el-form-item prop="user">
+      <el-form-item prop="username">
         <span class="svg-container"><svg-icon icon-class="user" /></span>
         <el-input 
-        v-model="ruleForm.user"
+        v-model="ruleForm.username"
         placeholder="user" ></el-input>
       </el-form-item>
       <el-form-item prop="password">
@@ -71,11 +71,11 @@
     data() {
       return {
         ruleForm: {
-          user: "",
+          username: "",
           password: ""
         },
         rules: {
-          user: [
+          username: [
             { required: true, message: 'Please input user name', trigger: 'blur' },
             { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
           ],
@@ -97,6 +97,7 @@
           if (valid) {
             this.loading = true;
             console.log('submit!')
+            this.store.dispatch("user/login", this.ruleForm)
           } else {
             this.loading = false;
             console.log('error submit!', fields)
