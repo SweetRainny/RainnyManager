@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+// eslint-disable-next-line vue/multi-word-component-names
 <template>
   <div class="login-container">
     <el-form 
@@ -97,7 +99,8 @@
           if (valid) {
             this.loading = true;
             console.log('submit!')
-            this.store.dispatch("user/login", this.ruleForm)
+            // this.store.dispatch("user/login", this.ruleForm)
+            // this.$router.push();
           } else {
             this.loading = false;
             console.log('error submit!', fields)
@@ -109,7 +112,6 @@
       console.log('created---------')
       
       console.log( this.store.state.user.token)
-      
       
       // console.log(store.state.user)
       //获取token

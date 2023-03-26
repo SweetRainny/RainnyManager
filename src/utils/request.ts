@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 3000,
     // headers: {'X-Custom-Header': 'foobar'}
 });
